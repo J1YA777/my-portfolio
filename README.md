@@ -2,7 +2,7 @@
 
 This is my **personal portfolio website**, which includes the following sections:
 
-- **About Me** – Profile, hobbies, skills, and STEM interests  
+- **About Me** – Profile, hobbies, skills, and interests  
 - **Everyday Blog** – Daily or weekly reflections on learning, coding, and projects  
 - **Coding Projects** – Showcase of coding projects with screenshots and links  
 - **Competitions Tracker** – STEM/academic competitions with dates, status, and certificates  
