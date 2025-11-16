@@ -10,6 +10,6 @@ This is my **personal portfolio website**, which includes the following sections
 - **Competitions Tracker** – STEM/academic competitions with dates, status, and certificates  
 - **Research Projects** – Summaries of STEM research or experiments, with images or PDFs  
 
-The website is built using **HTML, CSS, and JavaScript**, with dynamic content managed via **[Netlify CMS](https://www.netlifycms.org/)**. Content is stored in this repository and can be updated through the admin panel without editing the code directly.  
+The website is built using **HTML, CSS, and JavaScript**, with dynamic content managed via **Netlify CMS**. Content is stored in this repository and can be updated through the admin panel without editing the code directly.  
 
 I planned, organized, and structured this portfolio myself; most of the code was generated with the help of AI.
