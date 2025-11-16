@@ -7,7 +7,8 @@ body {
     font-family: 'Roboto', sans-serif;
     background-color: #121212;
     color: #e0e0e0;
-    line-height: 1.6;
+    line-height: 1.8;
+    font-size: 1.2rem; /* Increased from 1rem */
 }
 
 /* ============================
@@ -16,7 +17,7 @@ body {
 
 nav {
     background-color: #1f1f1f;
-    padding: 20px 40px; /* bigger padding */
+    padding: 25px 50px; /* slightly bigger */
     position: sticky;
     top: 0;
     z-index: 100;
@@ -25,7 +26,7 @@ nav {
 nav ul {
     list-style: none;
     display: flex;
-    gap: 30px; /* bigger gap */
+    gap: 40px; /* bigger gap for large text */
     padding: 0;
     margin: 0;
 }
@@ -33,7 +34,7 @@ nav ul {
 nav ul li a {
     color: #e0e0e0;
     font-weight: bold;
-    font-size: 1.2rem; /* bigger font */
+    font-size: 2.4rem; /* doubled from 1.2rem */
     transition: 0.3s;
 }
 
@@ -47,9 +48,9 @@ nav ul li a:hover {
 
 .section-container {
     max-width: 1000px;
-    margin: 60px auto; /* more spacing */
+    margin: 60px auto;
     padding: 0 20px;
-    text-align: center; /* center text */
+    text-align: center;
 }
 
 /* ============================
@@ -57,12 +58,12 @@ nav ul li a:hover {
 ============================ */
 
 h1 {
-    font-size: 3rem; /* bigger main heading */
+    font-size: 6rem; /* doubled from 3rem */
     margin-bottom: 20px;
 }
 
 h2 {
-    font-size: 2.2rem; /* bigger section heading */
+    font-size: 4.4rem; /* doubled from 2.2rem */
     margin-bottom: 25px;
 }
 
@@ -71,12 +72,12 @@ h2 {
 ============================ */
 
 .profile-pic {
-    width: 180px; /* bigger */
-    height: 180px;
+    width: 220px; /* slightly bigger */
+    height: 220px;
     border-radius: 50%;
     object-fit: cover;
     display: block;
-    margin: 0 auto 25px auto;
+    margin: 0 auto 30px auto;
 }
 
 /* ============================
@@ -85,8 +86,9 @@ h2 {
 
 ul {
     list-style: disc;
-    padding-left: 40px;
-    text-align: left; /* better readability */
+    padding-left: 50px;
+    text-align: left;
+    font-size: 1.6rem; /* bigger list text */
 }
 
 /* ============================
@@ -95,17 +97,17 @@ ul {
 
 .card-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* slightly bigger cards */
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* bigger cards */
+    gap: 35px;
     justify-items: center;
 }
 
 .card {
     background-color: #1f1f1f;
-    padding: 25px;
+    padding: 35px;
     border-radius: 12px;
     width: 100%;
-    max-width: 350px;
+    max-width: 400px;
     box-shadow: 0 5px 12px rgba(0,0,0,0.5);
     transition: transform 0.2s, box-shadow 0.2s;
 }
@@ -119,21 +121,23 @@ ul {
     max-width: 100%;
     height: auto;
     border-radius: 8px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .card h3 {
-    font-size: 1.4rem;
-    margin: 0 0 10px 0;
+    font-size: 2.8rem; /* bigger card titles */
+    margin: 0 0 15px 0;
 }
 
 .card p {
-    margin: 5px 0;
+    margin: 10px 0;
+    font-size: 1.6rem; /* bigger card text */
 }
 
 .card a {
     display: inline-block;
-    margin-top: 10px;
+    margin-top: 15px;
     color: #ff9800;
     font-weight: bold;
+    font-size: 1.8rem; /* bigger link text */
 }
