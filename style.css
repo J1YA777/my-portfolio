@@ -6,8 +6,8 @@ body {
     font-family: 'Roboto', sans-serif;
     background-color: #121212;
     color: #e0e0e0;
-    line-height: 1.9;
-    font-size: 1.2rem; /* base text doubled */
+    line-height: 1.6;
+    font-size: 16px; /* body text */
 }
 
 /* ============================
@@ -15,7 +15,7 @@ body {
 ============================ */
 nav {
     background-color: #1f1f1f;
-    padding: 25px 50px;
+    padding: 15px 30px;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -24,7 +24,7 @@ nav {
 nav ul {
     list-style: none;
     display: flex;
-    gap: 40px;
+    gap: 20px;
     padding: 0;
     margin: 0;
 }
@@ -32,7 +32,7 @@ nav ul {
 nav ul li a {
     color: #e0e0e0;
     font-weight: bold;
-    font-size: 2.4rem; /* doubled from previous */
+    font-size: 18px; /* nav text size */
     transition: 0.3s;
 }
 
@@ -45,7 +45,7 @@ nav ul li a:hover {
 ============================ */
 .section-container {
     max-width: 1000px;
-    margin: 80px auto; /* more spacing for bigger content */
+    margin: 60px auto;
     padding: 0 20px;
     text-align: center;
 }
@@ -54,35 +54,38 @@ nav ul li a:hover {
    Headings
 ============================ */
 h1 {
-    font-size: 6rem;
-    margin-bottom: 40px;
+    font-size: 24px; /* headings 18px is too small for h1? Using 24px for main heading */
+    margin-bottom: 20px;
 }
 
 h2 {
-    font-size: 4.4rem;
-    margin-bottom: 40px;
+    font-size: 18px; /* section headings */
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 18px; /* card titles */
+    margin-bottom: 10px;
 }
 
 /* ============================
    Profile Picture (About Me)
 ============================ */
 .profile-pic {
-    width: 220px;
-    height: 220px;
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
     object-fit: cover;
     display: block;
-    margin: 0 auto 40px auto;
+    margin: 0 auto 20px auto;
 }
 
 /* ============================
-   Lists
+   Lists & Paragraphs
 ============================ */
-ul {
-    list-style: disc;
-    padding-left: 50px;
+ul, p {
+    font-size: 16px; /* body text size */
     text-align: left;
-    font-size: 1.6rem;
 }
 
 /* ============================
@@ -90,47 +93,42 @@ ul {
 ============================ */
 .card-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
     justify-items: center;
 }
 
 .card {
     background-color: #1f1f1f;
-    padding: 40px;
+    padding: 20px;
     border-radius: 12px;
     width: 100%;
-    max-width: 450px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
+    max-width: 350px;
+    box-shadow: 0 5px 12px rgba(0,0,0,0.5);
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .card:hover {
-    transform: translateY(-7px);
-    box-shadow: 0 12px 25px rgba(0,0,0,0.8);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.7);
 }
 
 .card img {
     max-width: 100%;
     height: auto;
     border-radius: 8px;
-    margin-bottom: 25px;
-}
-
-.card h3 {
-    font-size: 2.8rem;
-    margin: 0 0 15px 0;
+    margin-bottom: 15px;
 }
 
 .card p {
-    margin: 10px 0;
-    font-size: 1.6rem;
+    margin: 5px 0;
+    font-size: 16px; /* card text same as body */
 }
 
 .card a {
     display: inline-block;
-    margin-top: 15px;
+    margin-top: 10px;
     color: #ff9800;
     font-weight: bold;
-    font-size: 1.8rem;
+    font-size: 16px; /* card link same as body text */
 }
