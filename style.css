@@ -32,7 +32,7 @@ nav ul {
 nav ul li a {
     color: #e0e0e0;
     font-weight: bold;
-    font-size: 18px; /* nav text size */
+    font-size: 18px; /* nav links */
     transition: 0.3s;
 }
 
@@ -53,19 +53,9 @@ nav ul li a:hover {
 /* ============================
    Headings
 ============================ */
-h1 {
-    font-size: 24px; /* headings 18px is too small for h1? Using 24px for main heading */
+h1, h2, h3 {
+    font-size: 18px; /* all headings standard 18px */
     margin-bottom: 20px;
-}
-
-h2 {
-    font-size: 18px; /* section headings */
-    margin-bottom: 20px;
-}
-
-h3 {
-    font-size: 18px; /* card titles */
-    margin-bottom: 10px;
 }
 
 /* ============================
@@ -81,10 +71,10 @@ h3 {
 }
 
 /* ============================
-   Lists & Paragraphs
+   Paragraphs & Lists
 ============================ */
-ul, p {
-    font-size: 16px; /* body text size */
+p, ul {
+    font-size: 16px; /* body text */
     text-align: left;
 }
 
@@ -118,6 +108,11 @@ ul, p {
     height: auto;
     border-radius: 8px;
     margin-bottom: 15px;
+}
+
+.card h3 {
+    font-size: 18px; /* card titles match headings */
+    margin-bottom: 10px;
 }
 
 .card p {
