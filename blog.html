@@ -1,1 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Everyday Blog - My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="index.html">About Me</a></li>
+            <li><a href="blog.html">Everyday Blog</a></li>
+            <li><a href="projects.html">Coding Projects</a></li>
+            <li><a href="competitions.html">Competitions Tracker</a></li>
+            <li><a href="research.html">Research Projects</a></li>
+        </ul>
+    </nav>
 
+    <!-- Blog Section -->
+    <section id="blog" class="section-container">
+        <h2>Everyday Blog</h2>
+        <p>Add and view blog posts below. Use the admin panel (+ button) to create new posts.</p>
+
+        <div id="blog-container" class="card-container">
+            <!-- Blog posts will be dynamically loaded here -->
+        </div>
+
+        <p>To add a new post, click <a href="admin/" target="_blank">+</a> and publish in the admin panel.</p>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
