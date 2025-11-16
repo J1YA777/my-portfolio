@@ -1,7 +1,9 @@
 backend:
   name: github
-  repo: J1YA777/my-portfolio
+  repo: YOUR_USERNAME/my-portfolio
   branch: main
+  auth_type: implicit
+  api_root: https://api.github.com
 
 media_folder: "images"
 public_folder: "/images"
