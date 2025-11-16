@@ -1,4 +1,7 @@
-/* Global Styles */
+/* ============================
+   Global Styles
+============================ */
+
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
@@ -6,7 +9,19 @@ body {
     color: #e0e0e0;
 }
 
-/* Navigation Bar */
+a {
+    color: #ff9800;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ============================
+   Navigation Bar
+============================ */
+
 nav {
     background-color: #1f1f1f;
     padding: 10px 20px;
@@ -14,6 +29,7 @@ nav {
     top: 0;
     z-index: 100;
 }
+
 nav ul {
     list-style: none;
     display: flex;
@@ -21,24 +37,31 @@ nav ul {
     padding: 0;
     margin: 0;
 }
+
 nav ul li a {
-    text-decoration: none;
     color: #e0e0e0;
     font-weight: bold;
     transition: 0.3s;
 }
+
 nav ul li a:hover {
     color: #ff9800;
 }
 
-/* Sections */
+/* ============================
+   Sections
+============================ */
+
 .section-container {
     max-width: 1000px;
     margin: 50px auto;
     padding: 0 20px;
 }
 
-/* Profile Picture */
+/* ============================
+   Profile Picture (About Me)
+============================ */
+
 .profile-pic {
     width: 150px;
     height: 150px;
@@ -48,14 +71,65 @@ nav ul li a:hover {
     margin: 0 auto 20px auto;
 }
 
-/* Headings */
+/* ============================
+   Headings
+============================ */
+
 h1, h2 {
     text-align: center;
     margin-bottom: 20px;
 }
 
-/* Skills List */
+/* ============================
+   Lists
+============================ */
+
 ul {
     list-style: disc;
     padding-left: 40px;
+}
+
+/* ============================
+   Cards (Blog, Projects, Competitions, Research)
+============================ */
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background-color: #1f1f1f;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    margin: 0 0 10px 0;
+}
+
+.card p {
+    margin: 5px 0;
+}
+
+.card a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #ff9800;
+    font-weight: bold;
 }
