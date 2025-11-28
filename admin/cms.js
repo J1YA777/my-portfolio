@@ -1,11 +1,27 @@
-// Password protection
-const adminPassword = "eshaal123456"; 
-let input = prompt("Enter admin password:");
+// ----- CONFIG -----
+const PASSWORD_HASH = "f90c6a6f21bbd43e3bf3e83f4d392eb3839141e4be5e1478dd8e2b847cdfbe0e"; // SHA-256 of "eshaal123456"
 
-if(input !== adminPassword){
-    alert("Incorrect password. Access denied.");
-    document.body.innerHTML = "<h2>Access Denied</h2>";
+// SHA-256 Hashing function
+async function sha256(message) {
+    const msgBuffer = new TextEncoder().encode(message);
+    const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
+    const hashArray = Array.from(new Uint8Array(hashBuffer));
+    return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
 }
+
+// ----- LOGIN HANDLER -----
+document.getElementById("login-btn").addEventListener("click", async () => {
+    const input = document.getElementById("password-input").value;
+
+    const hashed = await sha256(input);
+
+    if (hashed === PASSWORD_HASH) {
+        localStorage.setItem("adminLoggedIn", "true");
+        window.location.href = "dashboard.html";
+    } else {
+        alert("Incorrect password");
+    }
+});
 
 // Add new entry
 document.getElementById("addButton").addEventListener("click", () => {
