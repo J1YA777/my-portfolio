@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: j1yA777/my-portfolio
+  repo: J1YA777/my-portfolio
   branch: main
   auth_type: implicit
   api_root: https://api.github.com
