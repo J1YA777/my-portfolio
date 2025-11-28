@@ -6,35 +6,78 @@
 <title>Portfolio Admin</title>
 <link rel="stylesheet" href="../style.css">
 <script src="cms.js" defer></script>
+<style>
+  body {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+  input, textarea, select, button {
+    display: block;
+    margin: 10px 0;
+    padding: 8px;
+    font-size: 16px;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 5px;
+    border: none;
+  }
+  button {
+    background-color: #1f6feb;
+    color: white;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: #1158c7;
+  }
+  #login-form {
+    max-width: 400px;
+  }
+  h1, h2 {
+    color: #fff;
+  }
+</style>
 </head>
 <body>
-<h1>Portfolio Admin Panel</h1>
 
-<h2>Add New Entry</h2>
-<label>Section:</label>
-<select id="section">
-  <option value="blog">Blog</option>
-  <option value="projects">Projects</option>
-  <option value="competitions">Competitions</option>
-  <option value="research">Research</option>
-</select>
+<!-- Login Form -->
+<div id="login-form">
+  <h1>Admin Login</h1>
+  <input type="password" id="password-input" placeholder="Enter password">
+  <button id="login-btn">Login</button>
+</div>
 
-<label>Title:</label>
-<input type="text" id="title">
+<!-- Admin Panel (hidden initially) -->
+<div id="admin-panel" style="display:none;">
+  <h1>Portfolio Admin Panel</h1>
+  <h2>Add New Entry</h2>
 
-<label>Date:</label>
-<input type="date" id="date">
+  <label>Section:</label>
+  <select id="section">
+    <option value="blog">Blog</option>
+    <option value="projects">Projects</option>
+    <option value="competitions">Competitions</option>
+    <option value="research">Research</option>
+  </select>
 
-<label>Status / Notes:</label>
-<input type="text" id="status">
+  <label>Title:</label>
+  <input type="text" id="title">
 
-<label>Content / Description:</label>
-<textarea id="content"></textarea>
+  <label>Date:</label>
+  <input type="date" id="date">
 
-<label>Image Filename:</label>
-<input type="text" id="image">
+  <label>Status / Notes:</label>
+  <input type="text" id="status">
 
-<button id="addButton">+</button>
+  <label>Content / Description:</label>
+  <textarea id="content"></textarea>
+
+  <label>Image Filename:</label>
+  <input type="text" id="image" placeholder="image.jpg">
+
+  <button id="addButton">Post +</button>
+</div>
 
 </body>
 </html>
