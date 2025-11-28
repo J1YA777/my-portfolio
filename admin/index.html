@@ -1,11 +1,40 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Content Manager</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  </head>
-  <body>
-    <script src="https://unpkg.com/netlify-cms@2.10.192/dist/netlify-cms.js"></script>
-  </body>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio Admin</title>
+<link rel="stylesheet" href="../style.css">
+<script src="cms.js" defer></script>
+</head>
+<body>
+<h1>Portfolio Admin Panel</h1>
+
+<h2>Add New Entry</h2>
+<label>Section:</label>
+<select id="section">
+  <option value="blog">Blog</option>
+  <option value="projects">Projects</option>
+  <option value="competitions">Competitions</option>
+  <option value="research">Research</option>
+</select>
+
+<label>Title:</label>
+<input type="text" id="title">
+
+<label>Date:</label>
+<input type="date" id="date">
+
+<label>Status / Notes:</label>
+<input type="text" id="status">
+
+<label>Content / Description:</label>
+<textarea id="content"></textarea>
+
+<label>Image Filename:</label>
+<input type="text" id="image">
+
+<button id="addButton">+</button>
+
+</body>
 </html>
