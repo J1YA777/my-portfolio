@@ -1,7 +1,8 @@
 // ================================
 // CONFIG
 // ================================
-const PASSWORD_HASH = "f90c6a6f21bbd43e3bf3e83f4d392eb3839141e4be5e1478dd8e2b847cdfbe0e"; // SHA-256 of your password
+const PASSWORD_HASH = "e6052cd77d3033a46765b65af71dd57e0c1222d8f61e539723b3e3f3cc856665
+"; 
 
 // SHA-256 hashing function
 async function sha256(message) {
