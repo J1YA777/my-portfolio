@@ -25,8 +25,8 @@ const codingProjects = [
 // Competitions
 const competitions = [
     {
-        title: "STEM Olympiad 2025",
-        date: "2025-10-10",
+        title: "Sample Project",
+        date: "1010-10-10",
         status: "Completed",
         certificate: "images/sample-certificate.jpg"
     }
@@ -35,7 +35,7 @@ const competitions = [
 // Research Projects
 const researchProjects = [
     {
-        title: "Physics Experiment",
+        title: "Sample Project",
         description: "Short summary of the research project.",
         file: "images/sample-research.pdf",
         image: "images/sample-research.jpg"
