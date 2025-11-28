@@ -1,9 +1,11 @@
 // ================================
 // CONFIG
 // ================================
-const PASSWORD_HASH = "f1c5ea439e9f24f5ad4c1f3c5e902c204c73671c70de6ba011eb17a79eec65da";
+const PASSWORD_HASH = "f1c5ea439e9f24f5ad4c1f3c5e902c204c73671c70de6ba011eb17a79eec65da"; // SHA-256 of your password
 
+// ================================
 // SHA-256 hashing function
+// ================================
 async function sha256(message) {
     const msgBuffer = new TextEncoder().encode(message);
     const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
@@ -24,6 +26,7 @@ document.getElementById("login-btn").addEventListener("click", async () => {
         document.getElementById("admin-panel").style.display = "block";
     } else {
         alert("Incorrect password");
+        document.getElementById("password-input").value = ""; // Clear input on wrong password
     }
 });
 
@@ -31,7 +34,7 @@ document.getElementById("login-btn").addEventListener("click", async () => {
 // INIT
 // ================================
 window.addEventListener("DOMContentLoaded", () => {
-    // Always hide admin panel on load
+    // Hide admin panel initially
     document.getElementById("admin-panel").style.display = "none";
     document.getElementById("login-form").style.display = "block";
 });
@@ -55,23 +58,22 @@ document.getElementById("addButton").addEventListener("click", () => {
     const newEntry = { title, date, status, content, image };
 
     fetch(`../data/${section}.json`)
-    .then(res => res.json())
-    .then(data => {
-        data.push(newEntry);
-        const jsonStr = JSON.stringify(data, null, 2);
-        const blob = new Blob([jsonStr], {type: "application/json"});
-        const a = document.createElement("a");
-        a.href = URL.createObjectURL(blob);
-        a.download = `${section}.json`;
-        a.click();
-        alert("Entry added! Download the JSON file and commit it to GitHub to make it live.");
+        .then(res => res.json())
+        .then(data => {
+            data.push(newEntry);
+            const jsonStr = JSON.stringify(data, null, 2);
+            const blob = new Blob([jsonStr], { type: "application/json" });
+            const a = document.createElement("a");
+            a.href = URL.createObjectURL(blob);
+            a.download = `${section}.json`;
+            a.click();
 
-        // Clear form fields after posting
-        document.getElementById("title").value = "";
-        document.getElementById("date").value = "";
-        document.getElementById("status").value = "";
-        document.getElementById("content").value = "";
-        document.getElementById("image").value = "";
-    })
-    .catch(err => alert("Error fetching JSON: " + err));
+            alert("Entry added! Download the JSON file and commit it to GitHub to make it live.");
+
+            // Clear form fields
+            ["title", "date", "status", "content", "image"].forEach(id => {
+                document.getElementById(id).value = "";
+            });
+        })
+        .catch(err => alert("Error fetching JSON: " + err));
 });
