@@ -1,7 +1,7 @@
 // ================================
 // CONFIG
 // ================================
-const PASSWORD_HASH = "e4b3d1d95c4a4b19a38ecf52ec1fa7f89392a13b0ebfa244c399bce0f8b0a2f5"; // SHA-256 of "eshaal123456"
+const PASSWORD_HASH = "f1c5ea439e9f24f5ad4c1f3c5e902c204c73671c70de6ba011eb17a79eec65da";
 
 // SHA-256 hashing function
 async function sha256(message) {
