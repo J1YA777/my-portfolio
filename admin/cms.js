@@ -1,7 +1,9 @@
-// ----- CONFIG -----
-const PASSWORD_HASH = "f90c6a6f21bbd43e3bf3e83f4d392eb3839141e4be5e1478dd8e2b847cdfbe0e"; // SHA-256 of "eshaal123456"
+// ================================
+// CONFIG
+// ================================
+const PASSWORD_HASH = "f90c6a6f21bbd43e3bf3e83f4d392eb3839141e4be5e1478dd8e2b847cdfbe0e"; // SHA-256 of your password
 
-// SHA-256 Hashing function
+// SHA-256 hashing function
 async function sha256(message) {
     const msgBuffer = new TextEncoder().encode(message);
     const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
@@ -9,19 +11,31 @@ async function sha256(message) {
     return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
 }
 
-// ----- LOGIN HANDLER -----
+// ================================
+// LOGIN HANDLER
+// ================================
 document.getElementById("login-btn").addEventListener("click", async () => {
     const input = document.getElementById("password-input").value;
-
     const hashed = await sha256(input);
 
     if (hashed === PASSWORD_HASH) {
-        localStorage.setItem("adminLoggedIn", "true");
-        window.location.href = "dashboard.html";
+        // Redirect to dashboard or show admin controls
+        document.getElementById("login-form").style.display = "none";
+        document.getElementById("admin-panel").style.display = "block";
     } else {
         alert("Incorrect password");
     }
 });
+
+// ================================
+// INIT
+// ================================
+window.addEventListener("DOMContentLoaded", () => {
+    // Always hide admin panel on load
+    document.getElementById("admin-panel").style.display = "none";
+    document.getElementById("login-form").style.display = "block";
+});
+
 
 // Add new entry
 document.getElementById("addButton").addEventListener("click", () => {
