@@ -1,8 +1,7 @@
 // ================================
 // CONFIG
 // ================================
-const PASSWORD_HASH = "e6052cd77d3033a46765b65af71dd57e0c1222d8f61e539723b3e3f3cc856665
-"; 
+const PASSWORD_HASH = "e4b3d1d95c4a4b19a38ecf52ec1fa7f89392a13b0ebfa244c399bce0f8b0a2f5"; // SHA-256 of "eshaal123456"
 
 // SHA-256 hashing function
 async function sha256(message) {
@@ -16,11 +15,11 @@ async function sha256(message) {
 // LOGIN HANDLER
 // ================================
 document.getElementById("login-btn").addEventListener("click", async () => {
-    const input = document.getElementById("password-input").value;
+    const input = document.getElementById("password-input").value.trim();
     const hashed = await sha256(input);
 
     if (hashed === PASSWORD_HASH) {
-        // Redirect to dashboard or show admin controls
+        // Show admin panel
         document.getElementById("login-form").style.display = "none";
         document.getElementById("admin-panel").style.display = "block";
     } else {
@@ -37,15 +36,21 @@ window.addEventListener("DOMContentLoaded", () => {
     document.getElementById("login-form").style.display = "block";
 });
 
-
-// Add new entry
+// ================================
+// ADD NEW ENTRY
+// ================================
 document.getElementById("addButton").addEventListener("click", () => {
     const section = document.getElementById("section").value;
-    const title = document.getElementById("title").value;
+    const title = document.getElementById("title").value.trim();
     const date = document.getElementById("date").value;
-    const status = document.getElementById("status").value;
-    const content = document.getElementById("content").value;
-    const image = document.getElementById("image").value;
+    const status = document.getElementById("status").value.trim();
+    const content = document.getElementById("content").value.trim();
+    const image = document.getElementById("image").value.trim();
+
+    if (!title) {
+        alert("Title is required");
+        return;
+    }
 
     const newEntry = { title, date, status, content, image };
 
@@ -59,6 +64,14 @@ document.getElementById("addButton").addEventListener("click", () => {
         a.href = URL.createObjectURL(blob);
         a.download = `${section}.json`;
         a.click();
-        alert("Entry added! Download the JSON file and commit to GitHub to make it live.");
-    });
+        alert("Entry added! Download the JSON file and commit it to GitHub to make it live.");
+
+        // Clear form fields after posting
+        document.getElementById("title").value = "";
+        document.getElementById("date").value = "";
+        document.getElementById("status").value = "";
+        document.getElementById("content").value = "";
+        document.getElementById("image").value = "";
+    })
+    .catch(err => alert("Error fetching JSON: " + err));
 });
